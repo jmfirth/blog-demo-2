@@ -3,8 +3,15 @@ import { Link } from 'gatsby'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
 
-const Navbar = class extends React.Component {
-  constructor(props) {
+export interface NavbarProps {}
+
+interface State {
+  active: boolean;
+  navBarActiveClass: string;
+}
+
+export default class Navbar extends React.Component<NavbarProps, State> {
+  constructor(props: NavbarProps) {
     super(props)
     this.state = {
       active: false,
@@ -94,5 +101,3 @@ const Navbar = class extends React.Component {
     )
   }
 }
-
-export default Navbar
